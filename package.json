@@ -1,0 +1,27 @@
+{
+  "name": "algovista",
+  "version": "1.0.0",
+  "description": "AlgoVista — AI-Powered Algorithm Learning & Visualization Platform",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "keywords": [
+    "algorithms",
+    "data-structures",
+    "education",
+    "visualization",
+    "algovista",
+    "ada",
+    "computer-science"
+  ],
+  "author": "AlgoVista Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "groq-sdk": "^0.3.3"
+  }
+}

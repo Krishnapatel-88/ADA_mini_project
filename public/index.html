@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="AlgoVista — AI-Powered Algorithm Learning Platform. Interactive step-by-step visualizations, asymptotic complexity analysis, numerical solvers, Hindi & English video resources, and AI-powered tutoring.">
+  <meta name="keywords"
+    content="Algorithms, Data Structures, ADA, AlgoVista, Asymptotic Analysis, Sorting Visualizer, Dijkstra, Dynamic Programming, Master Theorem">
+  <meta name="author" content="AlgoVista Team">
+  <title>AlgoVista — Understand Algorithms. Visualize Every Step. Master Complexity.</title>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Responsive Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <div class="ada-container">
+    <!-- ======================================================================
+         SIDEBAR NAVIGATION
+         ====================================================================== -->
+    <aside class="ada-sidebar" id="ada-sidebar">
+      <div class="sidebar-brand">
+        <a href="#dashboard" class="brand-logo-link">
+          <div class="brand-icon">Ω</div>
+          <div>
+            <span class="brand-title">AlgoVista</span>
+            <!-- <span class="brand-tag">v1.0</span> -->
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Core Learning</div>
+        <div class="sidebar-nav-link active" data-route="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
+          Dashboard
+        </div>
+        <div class="sidebar-nav-link" data-route="learn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+          </svg>
+          Learn Algorithms
+        </div>
+        <div class="sidebar-nav-link" data-route="visualizer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="10 8 16 12 10 16 10 8" />
+          </svg>
+          Algorithm Visualizer
+        </div>
+
+        <div class="nav-section-title">Analysis & Tools</div>
+        <div class="sidebar-nav-link" data-route="complexity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+          Complexity Lab
+        </div>
+        <div class="sidebar-nav-link" data-route="solver">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="12" x2="16" y2="12" />
+            <line x1="12" y1="8" x2="12" y2="16" />
+          </svg>
+          Numerical Solver
+        </div>
+
+        <div class="nav-section-title">AI & Assessment</div>
+        <div class="sidebar-nav-link" data-route="ai-tutor">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          AI Doubt Solver
+        </div>
+        <div class="sidebar-nav-link" data-route="quiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          Quiz Center
+        </div>
+        <div class="sidebar-nav-link" data-route="resources">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polygon points="23 7 16 12 23 17 23 7" />
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+          </svg>
+          YouTube Resources
+        </div>
+
+        <div class="nav-section-title">Personal</div>
+        <div class="sidebar-nav-link" data-route="progress">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          My Progress
+        </div>
+        <div class="sidebar-nav-link" data-route="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+          Settings
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="sidebar-footer-text">CS & IT Curriculum</span>
+        <button class="btn-icon" id="theme-toggle-btn" title="Toggle Light / Dark Theme">
+          <span id="theme-toggle-icon">🌙</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- ======================================================================
+         MAIN WORKSPACE
+         ====================================================================== -->
+    <main class="ada-main-workspace">
+      <!-- Topbar -->
+      <header class="ada-topbar">
+        <div class="topbar-left">
+          <button class="btn-mobile-toggle" id="btn-mobile-menu" aria-label="Open navigation menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+          <div class="global-search-wrapper">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="global-search-input" class="search-input-field"
+              placeholder="Search algorithms (e.g., QuickSort, Dijkstra, DP)..." autocomplete="off">
+            <span class="search-kbd-hint">/</span>
+            <div id="global-search-dropdown" class="search-dropdown-menu hidden"></div>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="btn btn-secondary btn-sm" onclick="window.adaNavigation.navigateTo('visualizer')">
+            ▶ Visualizer
+          </button>
+          <button class="btn btn-primary btn-sm" onclick="window.adaNavigation.navigateTo('ai-tutor')">
+            Ask AI
+          </button>
+        </div>
+      </header>
+
+      <!-- ======================================================================
+           VIEW 1: HOME / DASHBOARD
+           ====================================================================== -->
+      <section id="view-dashboard" class="ada-view">
+        <div class="hero-banner">
+          <span class="hero-tag">Algorithm Design & Analysis Platform</span>
+          <h1>Master Algorithms with Clarity & Precision</h1>
+          <p class="hero-tagline">Understand algorithms through theory, step-by-step intermediate execution states,
+            complexity derivations, curated Hindi & English resources, and interactive AI tutoring.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="window.adaNavigation.navigateTo('visualizer')">Launch
+              Visualizer</button>
+            <button class="btn btn-secondary" onclick="window.adaNavigation.navigateTo('learn')">Explore
+              Curriculum</button>
+            <button class="btn btn-outline" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3);"
+              onclick="window.adaNavigation.navigateTo('solver')">Numerical Solver</button>
+          </div>
+        </div>
+
+        <!-- Groq API Status Notification -->
+        <div class="groq-status-banner hidden"></div>
+
+        <!-- Stats Overview -->
+        <div class="stats-grid-4">
+          <div class="stat-card">
+            <div class="stat-card-label">Curriculum Progress</div>
+            <div class="stat-card-value stat-val-progress">0%</div>
+            <div class="stat-card-note"><span class="stat-val-completed">0 / 44</span> Topics Mastered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Study Streak</div>
+            <div class="stat-card-value stat-val-streak">1 Day</div>
+            <div class="stat-card-note">Active Today</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Execution Visualizers</div>
+            <div class="stat-card-value">100%</div>
+            <div class="stat-card-note">Sorting, Graphs, DP & Backtracking</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">AI Doubt Solver & Quizzes</div>
+            <div class="stat-card-value">Active</div>
+            <div class="stat-card-note">Interactive AI Engine</div>
+          </div>
+        </div>
+
+        <!-- Continue Learning / Suggested Next Topics -->
+        <div class="content-card">
+          <h3 class="section-title">Suggested Next Topics (Prerequisite Graph)</h3>
+          <div class="recommended-topics-grid" id="recommended-topics-list"></div>
+        </div>
+
+        <!-- Algorithm Categories Showcase -->
+        <h3 class="section-title" style="margin-top: 32px;">Curriculum Categories (A to M)</h3>
+        <div class="categories-showcase-grid" id="dashboard-categories-grid">
+          <!-- Populated from ALGORITHM_CATEGORIES -->
+          <div class="category-card" onclick="window.adaNavigation.navigateTo('learn')">
+            <div class="category-card-top">
+              <span class="cat-badge">A</span>
+              <span class="cat-title">Algorithm Fundamentals</span>
+            </div>
+            <p class="category-card-desc">Definition, Knuth criteria, correctness proofs, iterative vs recursive design.
+            </p>
+            <span class="btn-read-more">View Topics →</span>
+          </div>
+
+          <div class="category-card" onclick="window.adaNavigation.navigateTo('learn')">
+            <div class="category-card-top">
+              <span class="cat-badge">B</span>
+              <span class="cat-title">Asymptotic Analysis</span>
+            </div>
+            <p class="category-card-desc">Big O, Omega, Theta notations, growth orders, time-space bounds.</p>
+            <span class="btn-read-more">View Topics →</span>
+          </div>
+
+          <div class="category-card" onclick="window.adaNavigation.navigateTo('visualizer/bubble-sort')">
+            <div class="category-card-top">
+              <span class="cat-badge">D</span>
+              <span class="cat-title">Sorting Algorithms</span>
+            </div>
+            <p class="category-card-desc">Bubble, Selection, Insertion, Merge, Quick, and Heap sort with execution
+              visualizers.</p>
+            <span class="btn-read-more">Open Visualizer →</span>
+          </div>
+
+          <div class="category-card" onclick="window.adaNavigation.navigateTo('visualizer/dijkstra')">
+            <div class="category-card-top">
+              <span class="cat-badge">H</span>
+              <span class="cat-title">Graph Algorithms</span>
+            </div>
+            <p class="category-card-desc">BFS, DFS, Dijkstra shortest path, Bellman-Ford, Prim's and Kruskal's MST.</p>
+            <span class="btn-read-more">Open Visualizer →</span>
+          </div>
+
+          <div class="category-card" onclick="window.adaNavigation.navigateTo('visualizer/knapsack-01')">
+            <div class="category-card-top">
+              <span class="cat-badge">G</span>
+              <span class="cat-title">Dynamic Programming</span>
+            </div>
+            <p class="category-card-desc">0/1 Knapsack, LCS, Matrix Chain Multiplication with state table animations.
+            </p>
+            <span class="btn-read-more">Open Visualizer →</span>
+          </div>
+
+          <div class="category-card" onclick="window.adaNavigation.navigateTo('solver')">
+            <div class="category-card-top">
+              <span class="cat-badge">K</span>
+              <span class="cat-title">Recurrence & Solvers</span>
+            </div>
+            <p class="category-card-desc">Master Theorem solver, recursion tree derivations, substitution methods.</p>
+            <span class="btn-read-more">Launch Solver →</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 2: LEARN ALGORITHMS (CURRICULUM)
+           ====================================================================== -->
+      <section id="view-learn" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 24px;">
+          <h2>Algorithm Curriculum (Categories A to M)</h2>
+          <p class="text-subtle">Comprehensive structured lessons covering core CS theory, step-by-step mechanics,
+            implementations, and interview problems.</p>
+        </div>
+        <div id="curriculum-categories-list"></div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 3: STANDARD ALGORITHM LEARNING PAGE (23 FIELDS)
+           ====================================================================== -->
+      <section id="view-algorithm-detail" class="ada-view hidden">
+        <div id="algorithm-detail-container"></div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 4: ALGORITHM VISUALIZER
+           ====================================================================== -->
+      <section id="view-visualizer" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 20px;">
+          <h2>Interactive Algorithm Visualizer</h2>
+          <p class="text-subtle">Watch real algorithm execution traces, inspect intermediate array/graph/DP states, and
+            compare algorithmic efficiencies side-by-side.</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="viz-category-tabs-bar" style="display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto;">
+          <button class="btn btn-outline viz-category-tab active" data-category="sorting">Sorting</button>
+          <button class="btn btn-outline viz-category-tab" data-category="searching">Searching</button>
+          <button class="btn btn-outline viz-category-tab" data-category="graph">Graph Traversal & Paths</button>
+          <button class="btn btn-outline viz-category-tab" data-category="dp">Dynamic Programming Table</button>
+          <button class="btn btn-outline viz-category-tab" data-category="backtracking">Backtracking (N-Queens)</button>
+        </div>
+
+        <!-- Controls Toolbar -->
+        <div class="viz-controls-panel">
+          <div class="playback-btn-group">
+            <button class="viz-control-btn primary" id="viz-btn-play">▶ Play</button>
+            <button class="viz-control-btn primary hidden" id="viz-btn-pause">⏸ Pause</button>
+            <button class="viz-control-btn" id="viz-btn-prev">⏮ Step Back</button>
+            <button class="viz-control-btn" id="viz-btn-next">⏭ Next Step</button>
+            <button class="viz-control-btn" id="viz-btn-reset">↺ Reset</button>
+            <button class="viz-control-btn" id="viz-btn-finish">⏩ Finish</button>
+          </div>
+
+          <div class="viz-slider-group">
+            <span>Speed:</span>
+            <input type="range" id="viz-speed-slider" min="1" max="10" value="6" style="width: 100px;">
+            <span id="viz-speed-val">6x</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <select id="viz-algo-select" class="form-select"
+              style="height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              <option value="bubble-sort">Bubble Sort</option>
+              <option value="selection-sort">Selection Sort</option>
+              <option value="insertion-sort">Insertion Sort</option>
+              <option value="merge-sort">Merge Sort</option>
+              <option value="quick-sort">Quick Sort</option>
+              <option value="heap-sort">Heap Sort</option>
+            </select>
+
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer;">
+              <input type="checkbox" id="viz-toggle-compare">
+              <strong>Compare 2</strong>
+            </label>
+          </div>
+        </div>
+
+        <!-- Input Generation Sub-panel for Sorting -->
+        <div id="viz-sorting-controls" class="content-card" style="padding: 14px 20px; margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>Size:</span>
+              <input type="range" id="viz-size-slider" min="5" max="25" value="8" style="width: 90px;">
+              <span id="viz-size-val">8 items</span>
+              <button class="btn btn-outline btn-sm" id="viz-btn-random">🎲 Random Array</button>
+              <button class="btn btn-outline btn-sm" id="viz-btn-preset-sorted">Sorted Preset</button>
+              <button class="btn btn-outline btn-sm" id="viz-btn-preset-reversed">Reverse Preset</button>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="viz-custom-input" placeholder="Custom: 35, 12, 48, 20"
+                style="padding: 4px 10px; font-size: 13px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-muted); color: var(--text-main); width: 180px;">
+              <button class="btn btn-secondary btn-sm" id="viz-btn-apply-custom">Set Array</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Sub-panel for Searching -->
+        <div id="viz-searching-controls" class="content-card hidden" style="padding: 14px 20px; margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span>Target Value to Find:</span>
+            <input type="number" id="viz-search-target" value="20"
+              style="width: 80px; padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+            <button class="btn btn-primary btn-sm" onclick="window.adaVisualizer.reset()">Search</button>
+          </div>
+        </div>
+
+        <!-- Input Sub-panel for N-Queens -->
+        <div id="viz-backtracking-controls" class="content-card hidden"
+          style="padding: 14px 20px; margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span>Board Size (N):</span>
+            <select id="viz-queens-n"
+              style="padding: 4px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);"
+              onchange="window.adaVisualizer.reset()">
+              <option value="4" selected>4 x 4 Chessboard</option>
+              <option value="5">5 x 5 Chessboard</option>
+              <option value="6">6 x 6 Chessboard</option>
+            </select>
+            <span class="text-subtle">Watch recursive row placement, conflict checks, and backtrack steps.</span>
+          </div>
+        </div>
+
+        <!-- Step Status & Descriptions -->
+        <div class="viz-step-infobar">
+          <div>
+            <strong id="viz-step-counter">Step 1 of 1</strong>:
+            <span id="viz-step-desc">Ready</span>
+          </div>
+          <div style="display: flex; gap: 16px;">
+            <span>Comparisons: <strong id="viz-stat-comparisons">0</strong></span>
+            <span>Swaps / Writes: <strong id="viz-stat-swaps">0</strong></span>
+          </div>
+        </div>
+
+        <!-- Single Canvas Display -->
+        <div id="viz-single-container">
+          <div class="viz-canvas-box" id="viz-canvas"></div>
+        </div>
+
+        <!-- Dual Comparison Container -->
+        <div id="viz-compare-container" class="hidden">
+          <div class="content-grid-2">
+            <div class="content-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <select id="viz-compare-algo1" class="form-select"
+                  style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+                  <option value="bubble-sort">Bubble Sort</option>
+                  <option value="selection-sort">Selection Sort</option>
+                  <option value="insertion-sort">Insertion Sort</option>
+                  <option value="merge-sort">Merge Sort</option>
+                  <option value="quick-sort">Quick Sort</option>
+                  <option value="heap-sort">Heap Sort</option>
+                </select>
+                <div id="compare-stats-1" style="display: flex; gap: 8px;"></div>
+              </div>
+              <div class="viz-canvas-box" id="compare-canvas-1" style="height: 280px;"></div>
+            </div>
+
+            <div class="content-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <select id="viz-compare-algo2" class="form-select"
+                  style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+                  <option value="quick-sort" selected>Quick Sort</option>
+                  <option value="merge-sort">Merge Sort</option>
+                  <option value="heap-sort">Heap Sort</option>
+                  <option value="insertion-sort">Insertion Sort</option>
+                  <option value="selection-sort">Selection Sort</option>
+                  <option value="bubble-sort">Bubble Sort</option>
+                </select>
+                <div id="compare-stats-2" style="display: flex; gap: 8px;"></div>
+              </div>
+              <div class="viz-canvas-box" id="compare-canvas-2" style="height: 280px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 5: COMPLEXITY LAB
+           ====================================================================== -->
+      <section id="view-complexity" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 24px;">
+          <h2>Complexity Lab & Asymptotic Benchmarks</h2>
+          <p class="text-subtle">Compare theoretical Big-O growth curves, explore side-by-side properties, and run live
+            browser runtime benchmarks.</p>
+        </div>
+
+        <!-- Section 1: Growth Curves Graph -->
+        <div class="content-card">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div>
+              <h3 class="section-title" style="margin-bottom: 2px;">Asymptotic Growth Orders</h3>
+              <p class="text-subtle">Mathematical operation counts f(n) plotted as input size n grows.</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>Max n:</span>
+              <input type="range" id="complexity-slider-n" min="10" max="80" value="40" style="width: 120px;">
+              <strong id="complexity-val-n">n = 40</strong>
+            </div>
+          </div>
+
+          <!-- Curve Checkboxes -->
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; font-size: 13px;">
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(1)" checked> <strong
+                style="color: #10B981;">O(1)</strong> Constant</label>
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(log n)" checked> <strong
+                style="color: #06B6D4;">O(log n)</strong> Logarithmic</label>
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(n)" checked> <strong
+                style="color: #3B82F6;">O(n)</strong> Linear</label>
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(n log n)" checked> <strong
+                style="color: #6366F1;">O(n log n)</strong> Linearithmic</label>
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(n^2)" checked> <strong
+                style="color: #F59E0B;">O(n²)</strong> Quadratic</label>
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(n^3)"> <strong
+                style="color: #EC4899;">O(n³)</strong> Cubic</label>
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(2^n)"> <strong
+                style="color: #EF4444;">O(2ⁿ)</strong> Exponential</label>
+            <label><input type="checkbox" class="curve-toggle-checkbox" value="O(n!)"> <strong
+                style="color: #8B5CF6;">O(n!)</strong> Factorial</label>
+          </div>
+
+          <div id="complexity-svg-container" style="display: flex; justify-content: center;"></div>
+        </div>
+
+        <!-- Section 2: Side-by-Side Comparison Matrix -->
+        <div class="content-card">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div>
+              <h3 class="section-title" style="margin-bottom: 2px;">Algorithm Comparison Matrix</h3>
+              <p class="text-subtle">Compare time complexities, memory bounds, stability, and trade-offs side by side.
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <select id="comp-matrix-algo1" class="form-select"
+                style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+                <option value="merge-sort" selected>Merge Sort</option>
+                <option value="quick-sort">Quick Sort</option>
+                <option value="heap-sort">Heap Sort</option>
+                <option value="bubble-sort">Bubble Sort</option>
+                <option value="insertion-sort">Insertion Sort</option>
+                <option value="binary-search">Binary Search</option>
+                <option value="dijkstra-algorithm">Dijkstra</option>
+                <option value="knapsack-01">0/1 Knapsack</option>
+              </select>
+              <select id="comp-matrix-algo2" class="form-select"
+                style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+                <option value="quick-sort" selected>Quick Sort</option>
+                <option value="merge-sort">Merge Sort</option>
+                <option value="heap-sort">Heap Sort</option>
+                <option value="insertion-sort">Insertion Sort</option>
+                <option value="selection-sort">Selection Sort</option>
+              </select>
+              <select id="comp-matrix-algo3" class="form-select"
+                style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+                <option value="heap-sort" selected>Heap Sort</option>
+                <option value="insertion-sort">Insertion Sort</option>
+                <option value="merge-sort">Merge Sort</option>
+              </select>
+            </div>
+          </div>
+          <div id="comp-matrix-container"></div>
+        </div>
+
+        <!-- Section 3: Live In-Browser Benchmark -->
+        <div class="content-card">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div>
+              <h3 class="section-title" style="margin-bottom: 2px;">Live In-Browser Benchmark</h3>
+              <p class="text-subtle">Measures actual execution time in milliseconds using <code>performance.now()</code>
+                on your local device.</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>Dataset Size:</span>
+              <select id="benchmark-input-size"
+                style="padding: 4px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+                <option value="500">500 elements</option>
+                <option value="1000" selected>1,000 elements</option>
+                <option value="2500">2,500 elements</option>
+              </select>
+              <button class="btn btn-primary" id="btn-run-benchmark">Run Live Benchmark</button>
+            </div>
+          </div>
+          <div id="benchmark-chart-container">
+            <p class="text-subtle" style="text-align: center; padding: 30px;">Click "Run Live Benchmark" to execute and
+              measure algorithms live on your browser.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 6: NUMERICAL SOLVER
+           ====================================================================== -->
+      <section id="view-solver" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 20px;">
+          <h2>ADA Numerical Problem Solver</h2>
+          <p class="text-subtle">Step-by-step mathematical problem solvers for Master Theorem, Knapsack problems, LCS
+            tables, and Matrix Chain Multiplication.</p>
+        </div>
+
+        <div class="content-card" style="padding: 18px 24px;">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+            <label><strong>Select Problem Type:</strong></label>
+            <select id="solver-type-select"
+              style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); font-weight: 600;">
+              <option value="master" selected>Master Theorem (T(n) = aT(n/b) + f(n))</option>
+              <option value="frac-knapsack">Fractional Knapsack (Greedy)</option>
+              <option value="01-knapsack">0/1 Knapsack DP Matrix</option>
+              <option value="lcs">Longest Common Subsequence Table</option>
+              <option value="mcm">Matrix Chain Multiplication DP</option>
+            </select>
+          </div>
+
+          <!-- Solver Panel 1: Master Theorem -->
+          <div id="solver-panel-master" class="solver-input-panel">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end;">
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">Subproblems (a):</label><br>
+                <input type="number" id="mt-param-a" value="2" min="1" step="0.5"
+                  style="width: 80px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">Division Factor (b):</label><br>
+                <input type="number" id="mt-param-b" value="2" min="1.1" step="0.5"
+                  style="width: 80px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">Polynomial Exponent k in n<sup>k</sup>:</label><br>
+                <input type="number" id="mt-param-k" value="1" min="0" step="0.5"
+                  style="width: 80px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">Log Exponent p in log<sup>p</sup> n:</label><br>
+                <input type="number" id="mt-param-p" value="0" min="0" step="1"
+                  style="width: 80px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <button class="btn btn-primary" id="btn-solve-master">Solve Recurrence</button>
+            </div>
+          </div>
+
+          <!-- Solver Panel 2: Fractional Knapsack -->
+          <div id="solver-panel-frac-knapsack" class="solver-input-panel hidden">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end;">
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">Knapsack Capacity (W):</label><br>
+                <input type="number" id="fk-capacity" value="50"
+                  style="width: 90px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <div style="flex: 1; min-width: 250px;">
+                <label style="font-size: 12px; font-weight: 600;">Items (weight:value, separated by comma):</label><br>
+                <input type="text" id="fk-items" value="10:60, 20:100, 30:120"
+                  style="width: 100%; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <button class="btn btn-primary" id="btn-solve-frac-knap">Solve Fractional Knapsack</button>
+            </div>
+          </div>
+
+          <!-- Solver Panel 3: 0/1 Knapsack -->
+          <div id="solver-panel-01-knapsack" class="solver-input-panel hidden">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end;">
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">Capacity (W):</label><br>
+                <input type="number" id="dp-capacity" value="7"
+                  style="width: 80px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <div style="flex: 1; min-width: 180px;">
+                <label style="font-size: 12px; font-weight: 600;">Item Weights (wt<sub>i</sub>):</label><br>
+                <input type="text" id="dp-weights" value="2, 3, 4, 5"
+                  style="width: 100%; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <div style="flex: 1; min-width: 180px;">
+                <label style="font-size: 12px; font-weight: 600;">Item Values (v<sub>i</sub>):</label><br>
+                <input type="text" id="dp-values" value="3, 4, 5, 8"
+                  style="width: 100%; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <button class="btn btn-primary" id="btn-solve-01-knap">Generate DP Matrix</button>
+            </div>
+          </div>
+
+          <!-- Solver Panel 4: LCS -->
+          <div id="solver-panel-lcs" class="solver-input-panel hidden">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end;">
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">String X:</label><br>
+                <input type="text" id="lcs-str1" value="ABCBDAB"
+                  style="width: 140px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 600;">String Y:</label><br>
+                <input type="text" id="lcs-str2" value="BDCABA"
+                  style="width: 140px; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <button class="btn btn-primary" id="btn-solve-lcs">Solve LCS Matrix</button>
+            </div>
+          </div>
+
+          <!-- Solver Panel 5: Matrix Chain Multiplication -->
+          <div id="solver-panel-mcm" class="solver-input-panel hidden">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end;">
+              <div style="flex: 1; min-width: 280px;">
+                <label style="font-size: 12px; font-weight: 600;">Matrix Dimensions Array p<sub>0</sub>, p<sub>1</sub>,
+                  ..., p<sub>n</sub>:</label><br>
+                <input type="text" id="mcm-dims" value="10, 20, 30, 40, 30"
+                  style="width: 100%; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);">
+              </div>
+              <button class="btn btn-primary" id="btn-solve-mcm">Solve MCM Table</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Card -->
+        <div id="solver-output"></div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 7: AI DOUBT SOLVER
+           ====================================================================== -->
+      <section id="view-ai-tutor" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 20px;">
+          <h2>AI Algorithm Doubt Solver</h2>
+          <p class="text-subtle">Ask deep conceptual questions, clarify recurrences, get line-by-line code walk-throughs
+            in English or Hindi.</p>
+        </div>
+
+        <div class="groq-status-banner hidden"></div>
+
+        <div class="ai-tutor-container">
+          <div
+            style="padding: 12px 24px; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; background: var(--bg-muted);">
+            <div>
+              <span id="ai-context-badge" class="badge badge-category hidden">Context: None</span>
+              <span class="text-subtle" style="font-size: 12px;" id="ai-active-model-label">Interactive AI
+                Assistant</span>
+            </div>
+            <button class="btn btn-outline btn-sm" id="ai-clear-chat">Clear History</button>
+          </div>
+
+          <div class="ai-chat-messages" id="ai-tutor-messages">
+            <div class="chat-empty-state">
+              <div class="chat-empty-icon">🤖</div>
+              <h4>Welcome to AlgoVista AI Doubt Solver</h4>
+              <p>Type your query below or pick a quick prompt to begin learning!</p>
+            </div>
+          </div>
+
+          <div class="prompt-pills-row">
+            <button class="prompt-pill" data-prompt="Explain Merge Sort vs Quick Sort in detail.">Merge Sort vs Quick
+              Sort</button>
+            <button class="prompt-pill" data-prompt="Master Theorem ke cases ko simple Hindi mein explain karo.">Master
+              Theorem in Hindi</button>
+            <button class="prompt-pill" data-prompt="Explain why Dijkstra fails with negative edge weights.">Why
+              Dijkstra Fails on Negative Edges</button>
+            <button class="prompt-pill" data-prompt="Explain 0/1 Knapsack optimal substructure and state formula.">0/1
+              Knapsack Recurrence</button>
+            <button class="prompt-pill" data-prompt="What is the difference between NP-Hard and NP-Complete?">NP-Hard vs
+              NP-Complete</button>
+          </div>
+
+          <form id="ai-tutor-form" class="ai-input-bar">
+            <input type="text" id="ai-tutor-input" class="ai-input-text"
+              placeholder="Ask any algorithm doubt (e.g. 'Prove comparison sort is Ω(n log n)')..." autocomplete="off">
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 8: QUIZ CENTER
+           ====================================================================== -->
+      <section id="view-quiz" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 24px;">
+          <h2>AI Quiz Center</h2>
+          <p class="text-subtle">Test your mastery with dynamically generated quizzes, code prediction questions, and
+            complexity checks.</p>
+        </div>
+
+        <!-- Setup Card -->
+        <div class="content-card" id="quiz-setup-card">
+          <h3 class="section-title">Configure Your Test</h3>
+          <form id="quiz-generator-form">
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px;">
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Category:</label>
+                <select id="quiz-category-select" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="Sorting Algorithms">Sorting Algorithms</option>
+                  <option value="Searching Algorithms">Searching Algorithms</option>
+                  <option value="Divide and Conquer">Divide and Conquer</option>
+                  <option value="Greedy Algorithms">Greedy Algorithms</option>
+                  <option value="Dynamic Programming">Dynamic Programming</option>
+                  <option value="Graph Algorithms">Graph Algorithms</option>
+                  <option value="Recurrence Relations">Recurrence Relations</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Topic / Algorithm:</label>
+                <select id="quiz-algo-select" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="Merge Sort">Merge Sort</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Difficulty:</label>
+                <select id="quiz-difficulty-select" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="Easy">Easy (Conceptual)</option>
+                  <option value="Medium" selected>Medium (Standard ADA Exams)</option>
+                  <option value="Hard">Hard (GATE / Technical Interviews)</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Number of Questions:</label>
+                <select id="quiz-count-select" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="5" selected>5 Questions</option>
+                  <option value="10">10 Questions</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Language:</label>
+                <select id="quiz-lang-select" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="English" selected>English</option>
+                  <option value="Hindi">Hindi / Hinglish</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btn-generate-quiz">Start Dynamic Quiz</button>
+            <div id="quiz-gen-status" class="alert alert-info hidden" style="margin-top: 14px;">
+              <span>Generating questions and validating Big-O correctness...</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Active Quiz Runner Card -->
+        <div class="content-card hidden" id="quiz-runner-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div>
+              <h3 id="quiz-current-title" style="margin-bottom: 2px;">Algorithm Quiz</h3>
+              <span id="quiz-q-counter" class="text-subtle">Question 1 of 5</span>
+            </div>
+          </div>
+          <div class="progress-track" style="margin-bottom: 20px;">
+            <div class="progress-fill" id="quiz-prog-bar" style="width: 20%;"></div>
+          </div>
+
+          <h4 id="quiz-q-text" style="font-size: 17px; margin-bottom: 18px; line-height: 1.5;"></h4>
+          <div id="quiz-options-container"></div>
+          <div id="quiz-explanation-box" class="hidden"></div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+            <button class="btn btn-outline" id="quiz-btn-prev">Previous Question</button>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-primary" id="quiz-btn-next">Next Question →</button>
+              <button class="btn btn-success hidden" id="quiz-btn-submit">Submit Quiz</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Results Card -->
+        <div class="content-card hidden" id="quiz-results-card" style="text-align: center; padding: 40px 24px;">
+          <h2 style="margin-bottom: 10px;">Quiz Completed!</h2>
+          <div style="font-size: 48px; font-weight: 800; color: var(--color-primary); margin: 16px 0;"
+            id="quiz-result-score">5 / 5</div>
+          <div style="font-size: 20px; font-weight: 700; margin-bottom: 12px;" id="quiz-result-percent">100%</div>
+          <div id="quiz-result-badge" class="badge badge-success"
+            style="font-size: 14px; padding: 6px 16px; margin-bottom: 24px;">🌟 Outstanding!</div>
+          <div style="display: flex; justify-content: center; gap: 12px;">
+            <button class="btn btn-primary" id="quiz-btn-retry">Try Another Quiz</button>
+            <button class="btn btn-outline" onclick="window.adaNavigation.navigateTo('learn')">Back to
+              Curriculum</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 9: YOUTUBE RESOURCES
+           ====================================================================== -->
+      <section id="view-resources" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 24px;">
+          <h2>Curated YouTube Learning Resources</h2>
+          <p class="text-subtle">Top verified lectures in Hindi and English from Abdul Bari, Gate Smashers, Jenny's
+            Lectures, and top computer science educators.</p>
+        </div>
+
+        <div class="content-card" style="padding: 14px 20px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <label><strong>Language:</strong></label>
+              <select id="res-filter-lang"
+                style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main);"
+                onchange="window.adaNavigation.renderResourcesPage()">
+                <option value="Both" selected>Both Languages (Hindi & English)</option>
+                <option value="Hindi">Hindi Only (Gate Smashers, Jenny's, Knowledge Gate)</option>
+                <option value="English">English Only (Abdul Bari, Striver, MIT OCW)</option>
+              </select>
+            </div>
+            <span class="text-subtle">Verified YouTube links with zero fabricated video IDs</span>
+          </div>
+        </div>
+
+        <div id="resources-catalog-grid"></div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 10: MY PROGRESS
+           ====================================================================== -->
+      <section id="view-progress" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 24px;">
+          <h2>My Learning Progress & Analytics</h2>
+          <p class="text-subtle">Persistent LocalStorage tracking of completed curriculum topics, quiz performance
+            history, and active study streak.</p>
+        </div>
+
+        <div class="stats-grid-4">
+          <div class="stat-card">
+            <div class="stat-card-label">Overall Completion</div>
+            <div class="stat-card-value stat-val-progress">0%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Completed Topics</div>
+            <div class="stat-card-value stat-val-completed">0 / 12</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Current Streak</div>
+            <div class="stat-card-value stat-val-streak">1 Day</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Storage Backend</div>
+            <div class="stat-card-value" style="font-size: 18px;">LocalStorage</div>
+            <div class="stat-card-note">Client Persisted</div>
+          </div>
+        </div>
+
+        <!-- Category Progress Breakdown -->
+        <div class="content-card">
+          <h3 class="section-title">Mastery Across Algorithm Categories</h3>
+          <div id="category-progress-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;"></div>
+        </div>
+
+        <!-- Recent Quiz History -->
+        <div class="content-card">
+          <h3 class="section-title">Recent Quiz Scores</h3>
+          <div class="table-responsive">
+            <table class="ada-data-table">
+              <thead>
+                <tr>
+                  <th>Topic</th>
+                  <th>Difficulty</th>
+                  <th>Score</th>
+                  <th>Percentage</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="recent-quizzes-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Danger Zone: Reset Progress -->
+        <div class="content-card" style="border-color: #FECACA;">
+          <h4 style="color: #DC2626; margin-bottom: 8px;">Reset Learning Progress</h4>
+          <p class="text-subtle" style="margin-bottom: 14px;">Clears all completed topics, quiz records, and study
+            streak from your browser storage.</p>
+          <button class="btn btn-outline" id="btn-reset-progress" style="color: #DC2626; border-color: #F87171;">Reset
+            All Progress</button>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           VIEW 11: SETTINGS
+           ====================================================================== -->
+      <section id="view-settings" class="ada-view hidden">
+        <div class="view-header" style="margin-bottom: 24px;">
+          <h2>Platform Settings & Diagnostics</h2>
+          <p class="text-subtle">Configure interface appearance, learning goals, language preferences, and inspect Groq
+            API status.</p>
+        </div>
+
+        <div class="content-card">
+          <h3 class="section-title">Learning Preferences</h3>
+          <form id="preferences-form">
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-bottom: 16px;">
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Theme:</label>
+                <select id="pref-theme" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="light">Light Theme (Default)</option>
+                  <option value="dark">Dark Theme</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Preferred Language:</label>
+                <select id="pref-language" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="English">English</option>
+                  <option value="Hindi">Hindi / Hinglish</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Current Skill Level:</label>
+                <select id="pref-skill" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="Beginner">Beginner (Intuition & Analogies)</option>
+                  <option value="Intermediate" selected>Intermediate (Standard ADA)</option>
+                  <option value="Advanced">Advanced (Proofs & Bounds)</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 600;">Primary Learning Goal:</label>
+                <select id="pref-goal" class="form-select"
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); margin-top: 4px;">
+                  <option value="Semester Exams" selected>Semester Exams</option>
+                  <option value="Interview Prep">Job / Placement Interviews</option>
+                  <option value="Competitive Programming">Competitive Programming</option>
+                  <option value="Concept Mastery">Deep Concept Mastery</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="content-card">
+          <h3 class="section-title">Backend & AI Engine Diagnostics</h3>
+          <div class="groq-status-banner"></div>
+          <div style="font-size: 13.5px; line-height: 1.6; margin-top: 14px;">
+            <p><strong>Configuring AI Engine Key:</strong></p>
+            <ol style="margin-left: 20px; margin-top: 6px;">
+              <li>Obtain an API key.</li>
+              <li>Open <code>.env</code> in the project directory.</li>
+              <li>Set <code>GROQ_API_KEY=gsk_your_key_here</code>.</li>
+              <li>Restart the server (<code>npm start</code>).</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ======================================================================
+       UNIVERSAL FLOATING AI TUTOR BUTTON & DRAWER
+       ====================================================================== -->
+  <button class="floating-ai-btn" id="btn-floating-ai" title="Ask AI Doubt" aria-label="Open AI Tutor">
+    🤖
+  </button>
+
+  <div class="floating-ai-drawer" id="ai-floating-drawer">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span>🤖</span>
+        <strong>AlgoVista AI Doubt Solver</strong>
+      </div>
+      <button class="btn-icon" id="ai-floating-close" style="width: 28px; height: 28px;">✕</button>
+    </div>
+    <div class="ai-chat-messages" id="ai-floating-messages" style="flex: 1; padding: 14px; overflow-y: auto;">
+      <div class="chat-empty-state">
+        <p style="font-size: 13px;">Ask any question about algorithms, code, or complexity in English or Hindi!</p>
+      </div>
+    </div>
+    <form id="ai-floating-form"
+      style="padding: 10px; border-top: 1px solid var(--border-light); display: flex; gap: 6px;">
+      <input type="text" id="ai-floating-input"
+        style="flex: 1; height: 36px; padding: 0 10px; border-radius: 4px; border: 1px solid var(--border-light); background: var(--bg-surface); color: var(--text-main); font-size: 13px;"
+        placeholder="Ask your doubt..." autocomplete="off">
+      <button type="submit" class="btn btn-primary btn-sm">Ask</button>
+    </form>
+  </div>
+
+  <!-- ======================================================================
+       SCRIPTS (Modular Vanilla JavaScript)
+       ====================================================================== -->
+  <script src="js/storage.js"></script>
+  <script src="js/algorithms-data.js"></script>
+  <script src="js/resources.js"></script>
+  <script src="js/algorithm-engine.js"></script>
+  <script src="js/visualizer.js"></script>
+  <script src="js/complexity.js"></script>
+  <script src="js/numerical-solver.js"></script>
+  <script src="js/ai-tutor.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

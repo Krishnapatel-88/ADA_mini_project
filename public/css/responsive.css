@@ -1,0 +1,169 @@
+/* ==========================================================================
+   ADA EXPLORER — RESPONSIVE STYLESHEET
+   Breakpoints: Desktop (>1024px), Tablet (768px - 1024px), Mobile (<768px)
+   ========================================================================== */
+
+/* Tablet (1024px and down) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 230px;
+  }
+
+  .stats-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-banner {
+    padding: 28px 30px;
+  }
+
+  .hero-banner h1 {
+    font-size: 26px;
+  }
+}
+
+/* Mobile & Small Tablets (768px and down) */
+@media (max-width: 768px) {
+  .ada-sidebar {
+    transform: translateX(-100%);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .ada-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .ada-main-workspace {
+    margin-left: 0;
+  }
+
+  .btn-mobile-toggle {
+    display: flex;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 95;
+  }
+
+  .ada-sidebar.mobile-open ~ .sidebar-backdrop {
+    display: block;
+  }
+
+  .ada-topbar {
+    padding: 0 16px;
+  }
+
+  .topbar-left {
+    max-width: 100%;
+  }
+
+  .search-kbd-hint {
+    display: none;
+  }
+
+  .ada-view {
+    padding: 18px 14px;
+  }
+
+  .hero-banner {
+    padding: 24px 20px;
+  }
+
+  .hero-banner h1 {
+    font-size: 22px;
+  }
+
+  .stats-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .algo-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .algo-actions-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .algo-actions-top .btn {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  .complexity-stat-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .viz-controls-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .playback-btn-group {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .viz-canvas-box {
+    height: 300px;
+    padding: 12px;
+  }
+
+  .floating-ai-drawer {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    bottom: 80px;
+    height: 480px;
+  }
+}
+
+/* Very Small Mobile (<480px) */
+@media (max-width: 480px) {
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .complexity-stat-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .viz-bars-wrapper {
+    gap: 4px;
+  }
+
+  .viz-board-grid {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
